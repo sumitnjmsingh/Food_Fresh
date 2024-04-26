@@ -3,6 +3,8 @@ const router=express.Router();
 const bodyparser=require("body-parser");
 const app=express();
 const cors = require("cors");
+require("dotenv").config()
+const port=process.env.PORT
 
 
 const User=require("./userschema")
@@ -70,6 +72,6 @@ app.get("/contact",(req,res)=>{
     res.send("hello world contact");
 })
 
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log("server is running")
 })
